@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 public class Implementation {
     public static class Node {
         int data;
@@ -132,7 +135,19 @@ public class Implementation {
         // head = removePosition(head, 3);
         // head = insertHead(head, 100);
         // head = insertTail(head, 25);
-        head = insertPosition(head, 34, 4);
+        // head = insertPosition(head, 34, 4);
+        int len = getLength(head);
+        Scanner sc = new Scanner(System.in);
+        int k = sc.nextInt();
+        int index = len - k;
+        // System.out.println(len);
+        int count = 0;
+        Node temp = head;
+        while (count < index - 1) {
+            count++;
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
         Traversal(head);
     }
 }
